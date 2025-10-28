@@ -1,22 +1,43 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Login</title>
-</head>
-<body>
-<main class="conteiner">
-<form>
-    <h1>Login Game</h1>
-    <div class="input-box">
-        <input placeholder="Usuário" type="email">
-    </div>
-    <div class="input-box">
-        <input placeholder="Senha" type="password">
-    </div>
-</form>
+    <title>Redação Paraná</title>
 
-</main>
-</body>
-</html>
+    <body>
+    <div class="container">
+        <div class="logo-section">
+            <div class="logo">
+                <div class="mascot">
+                    <div class="mascot-face">😊</div>
+                </div>
+                <div class="title">
+                    <span class="title-redacao">STUDY C</span><span class="title-cao">ASH</span>
+                </div>
+                <div class="subtitle">PARANÁ</div>
+            </div>
+        </div>
+
+        <div class="buttons-container">
+            <button class="btn btn-student" onclick="acessarEstudante()">
+                <div class="icon">
+                    <span class="icon-student">🎓</span>
+                </div>
+                ESTUDANTE
+            </button>
+            <button class="btn btn-teacher" onclick="acessarProfessor()">
+                <div class="icon">
+                    <span class="icon-teacher">📚</span>
+                </div>
+                PROFESSOR
+            </button>
+            <button class="btn btn-admin" onclick="acessarAdministrador()">
+                <div class="icon">
+                    <span class="icon-admin">⚙️</span>
+                </div>
+                ADMINISTRADOR
+            </button>
+        </div>
+
+    </div>
