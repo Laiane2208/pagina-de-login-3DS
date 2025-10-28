@@ -1,1 +1,83 @@
+<script>
+        function mostrarCadastroEstudante() {
+            document.getElementById('paginaPrincipal').style.display = 'none';
+            document.getElementById('cadastroEstudante').style.display = 'block';
+        }
 
+        function mostrarCadastroProfessor() {
+            document.getElementById('paginaPrincipal').style.display = 'none';
+            document.getElementById('cadastroProfessor').style.display = 'block';
+        }
+
+        function mostrarCadastroAdministrador() {
+            document.getElementById('paginaPrincipal').style.display = 'none';
+            document.getElementById('cadastroAdministrador').style.display = 'block';
+        }
+
+        function voltarPrincipal() {
+            document.getElementById('paginaPrincipal').style.display = 'block';
+            document.getElementById('cadastroEstudante').style.display = 'none';
+            document.getElementById('cadastroProfessor').style.display = 'none';
+            document.getElementById('cadastroAdministrador').style.display = 'none';
+        }
+
+        function cadastrarEstudante(event) {
+            event.preventDefault();
+            
+            const nome = document.getElementById('nomeEstudante').value;
+            const idade = document.getElementById('idadeEstudante').value;
+            const turma = document.getElementById('turmaEstudante').value;
+            const email = document.getElementById('emailEstudante').value;
+            const senha = document.getElementById('senhaEstudante').value;
+            const confirmarSenha = document.getElementById('confirmarSenhaEstudante').value;
+
+            if (!email.endsWith('@escola.pr.gov.br')) {
+                alert('O e-mail deve terminar com @escola.pr.gov.br');
+                return;
+            }
+
+            if (senha !== confirmarSenha) {
+                alert('As senhas não coincidem!');
+                return;
+            }
+
+            alert(`Estudante cadastrado com sucesso!\n\nNome: ${nome}\nIdade: ${idade}\nTurma: ${turma}\nE-mail: ${email}`);
+            event.target.reset();
+            voltarPrincipal();
+        }
+
+        function cadastrarProfessor(event) {
+            event.preventDefault();
+            
+            const nome = document.getElementById('nomeProfessor').value;
+            const materia = document.getElementById('materiaProfessor').value;
+            const email = document.getElementById('emailProfessor').value;
+            const senha = document.getElementById('senhaProfessor').value;
+            const confirmarSenha = document.getElementById('confirmarSenhaProfessor').value;
+
+            if (senha !== confirmarSenha) {
+                alert('As senhas não coincidem!');
+                return;
+            }
+
+            alert(`Professor cadastrado com sucesso!\n\nNome: ${nome}\nMatéria: ${materia}\nE-mail: ${email}`);
+            event.target.reset();
+            voltarPrincipal();
+        }
+
+        function acessarAdministrador(event) {
+            event.preventDefault();
+            
+            const nome = document.getElementById('nomeAdministrador').value;
+            const codigo = document.getElementById('codigoAdministrador').value;
+
+            // Aqui você pode validar o código de acesso
+            if (codigo === 'ADMIN2024') { // Exemplo de código
+                alert(`Bem-vindo, Administrador ${nome}!`);
+                event.target.reset();
+                voltarPrincipal();
+            } else {
+                alert('Código de acesso inválido!');
+            }
+        }
+    </script>
